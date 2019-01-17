@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h5> Ini halaman List Produk </h5>
+
+  <div class="row" *ngIf="(produks)">
+      
+    <div *ngFor="let produk of produks" class="col-sm-3">
+      <a [routerLink]="['/detailproduk/'+produk.permalink]" ><strong>{{produk.nama}}</strong></a><br />
+      <img [src]="produk.thumbnail" width="150"> <br />
+      {{produk.harga}}      
+    </div>
+
+  </div>
+
+  <div *ngIf="!(produks)">Loading..</div>
+
+</div>

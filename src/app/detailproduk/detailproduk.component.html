@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h5> Ini halaman Detail Produk </h5>
+
+  <div *ngIf="ada_respon">
+      <div *ngIf="!(respon_benar)">{{response_message}}</div>
+      
+      <div *ngIf="(respon_benar)">
+          <h3>{{produk_detail.nama}}</h3>
+          <div><img [src]="produk_detail.file_foto" width="300"> </div>
+          <div>Harga: {{produk_detail.harga}} </div>
+          <div>{{produk_detail.deskripsi}} </div>
+      </div>
+  </div>
+  <div *ngIf="!(ada_respon)">Loading..</div>
+
+</div>
