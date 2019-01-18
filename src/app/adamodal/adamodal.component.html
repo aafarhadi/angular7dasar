@@ -1,0 +1,33 @@
+<div class="container">
+  <h5> Ini halaman yang ada modalnya </h5>
+  
+  <div style="margin-top: 20px;">
+    <button class="btn btn-lg btn-outline-success" (click)="buka_modalnya(content, 51)">Hapus yang ini</button> mengirimkan parameter id = 51 
+  </div>
+
+  <div style="margin-top: 20px;">
+    <button class="btn btn-lg btn-outline-warning" (click)="buka_modalnya(content, 107)">Hapus yang itu</button> mengirimkan parameter id = 107 
+  </div>
+
+  <div style="margin-top: 20px;">
+    <button class="btn btn-lg btn-outline-danger" (click)="buka_modalnya(content, 132)">Hapus yang anu</button> mengirimkan parameter id = 132 
+  </div>
+  
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header" style="background-color: #e1bee7;">
+      <h4 class="modal-title">Konfirmasi Hapus</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="background-color: #fce4ec;">
+      <p>Yakin akan menghapus data dengan id {{ id_dipilih }}</p>
+    </div>
+    <div class="modal-footer" style="background-color: #e1bee7;">
+      <button type="button" class="btn btn-dark" (click)="modal.close('Close click')">Cancel</button> 
+      <button type="button" class="btn btn-danger" (click)="hapus_data(id_dipilih)">Hapus</button>
+
+    </div>
+  </ng-template>

@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class DasarService{
+    private isi_keranjang_master = new BehaviorSubject(0);
+    isi_keranjang_sekarang = this.isi_keranjang_master.asObservable();
     
-    private api_url = "http://localhost/otentik/api/otq/";
+    public api_url = "http://localhost/otentik/api/otq/";
     //private api_url = "https://otentiq.id/api/otq/";
     
     constructor(private http: HttpClient){}
@@ -29,6 +31,10 @@ export class DasarService{
     
         // return an observable with a user friendly message
         return throwError('Error! something went wrong.');
+      }
+    
+      ganti_isi_keranjang(angka: number){
+        this.isi_keranjang_master.next(angka);
       }
 
 

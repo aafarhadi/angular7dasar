@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ListprodukComponent } from './listproduk/listproduk.component';
 import { DetailprodukComponent } from './detailproduk/detailproduk.component';
+import { AdamodalComponent } from './adamodal/adamodal.component';
+import { FileuploadComponent } from './fileupload/fileupload.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'listproduk', component: ListprodukComponent },
-  { path: 'detailproduk/:permalink', component: DetailprodukComponent}
+  { path: 'detailproduk/:permalink', component: DetailprodukComponent},
+  { path: 'adamodal', component: AdamodalComponent},
+  { path: 'fileupload', component: FileuploadComponent}
 ];
 
 @NgModule({
@@ -21,4 +25,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, LoginComponent, ListprodukComponent, DetailprodukComponent]
+export const routingComponents = [HomeComponent, LoginComponent, ListprodukComponent, DetailprodukComponent, AdamodalComponent, FileuploadComponent]

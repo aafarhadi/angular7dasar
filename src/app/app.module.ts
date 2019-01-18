@@ -10,6 +10,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DasarService } from './dasar.service';
 
+import { FileUploadModule } from 'ng2-file-upload';
+
+
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { DasarService } from './dasar.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule
   ],
   providers: [DasarService],
   bootstrap: [AppComponent]

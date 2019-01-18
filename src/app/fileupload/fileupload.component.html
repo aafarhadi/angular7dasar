@@ -1,0 +1,32 @@
+<div class="container">
+  <h5> Ini halaman File uploader </h5>
+  menggunakan ng2-file-upload<br > 
+  https://valor-software.com/ng2-file-upload/ <br>
+  https://github.com/valor-software/ng2-file-upload <br><br>
+
+  <div style="background-color: #ffccbc; padding: 5px;">
+        <strong>Upload setelah pencet button</strong>
+        <input type="file" ng2FileSelect [uploader]="uploader" /> <br > <br >
+        <button type="button" class="btn btn-success btn-xs" (click)="upload_sekarang()"> Upload Sekarang </button>
+  </div>
+
+  <div *ngIf="uploader.isHTML5">
+      <div class="progress" style="margin-bottom: 0;">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+      </div>
+  </div>
+
+  <div *ngIf="(respon_benar)" style="margin-top: 20px;">
+      <img [src]="url_gambar" width="200">
+  </div>
+
+  <div style="background-color: #b2ebf2; margin-top: 30px; padding: 5px;">
+    <strong>Upload langsung tanpa button</strong>
+    <input type="file" ng2FileSelect [uploader]="uploader" (change)="upload_sekarang()"  /> <br > <br >
+</div>
+
+
+
+
+
+</div>

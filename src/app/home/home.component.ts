@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DasarService } from '../dasar.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dasarService: DasarService) { }
 
   ngOnInit() {
+    this.ganti_keranjang();
+  }
+
+  ganti_keranjang(){
+    this.dasarService.ganti_isi_keranjang(1);
   }
 
 }

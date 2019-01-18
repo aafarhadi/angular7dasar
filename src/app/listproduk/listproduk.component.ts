@@ -14,11 +14,13 @@ export class ListprodukComponent implements OnInit {
 
   ngOnInit() {
     this.get_produk_terbaru();
+    this.dasarService.ganti_isi_keranjang(2);
   }
 
   get_produk_terbaru(){
     this.dasarService.hit_api_get('get_produk_terbaru').subscribe(
       (respon) => {
+        console.log(respon);
         this.produks = respon['data'];
       },
       (error) => console.log(error)

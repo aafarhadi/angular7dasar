@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.udah_submit = false;
     this.ada_respon = false;
     this.respon_benar = false;
+    this.dasarService.ganti_isi_keranjang(3);
   }
 
   onSubmit(f){
